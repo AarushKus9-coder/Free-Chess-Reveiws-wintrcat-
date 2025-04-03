@@ -1,0 +1,184 @@
+:root {
+    --spacing-unit: 0.625rem;
+    --border-radius: 0.625rem;
+    --modal-padding: 0.9375rem;
+    --modal-min-width: 25rem;
+    --modal-width: 50vw;
+    --list-padding: 0.3125rem 1.25rem;
+    --list-max-height: 26.25rem;
+    --gap-unit: 1.25rem;
+    --button-padding: 0.625rem 3.125rem;
+    --button-font-size: 1.25rem;
+    --icon-font-size: 1.5625rem;
+    --icon-padding: 0.625rem 0.9375rem;
+}
+
+/* 
+    DIALOG CONTAINER (SPANS ENTIRE SCREEN)
+*/
+#game-select-menu-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.7);
+}   
+
+/*
+    MODAL
+*/
+#game-select-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--modal-padding);
+
+    min-width: var(--modal-min-width);
+    width: var(--modal-width);
+
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/*
+    MODAL TITLE
+*/
+#game-select-menu h1 {
+    margin: 0 0 var(--spacing-unit) 0;
+}
+
+/*
+    GAMES LIST TIME PERIOD
+*/
+#game-select-period {
+    margin-bottom: var(--spacing-unit);
+    font-size: 1.5rem;
+}
+
+/*
+    GAMES LIST CONTAINER
+*/
+#games-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--list-padding);
+
+    width: 90%;
+    max-height: var(--list-max-height);
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background-color: #232323;
+    border-radius: var(--border-radius);
+}
+
+#games-list::-webkit-scrollbar {
+    background-color: #0e0e0e;
+}
+
+#games-list::-webkit-scrollbar-thumb {
+    background-color: #f5f5f5;
+}
+
+/*
+    GAME LISTING
+*/
+.game-listing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap-unit);
+    margin: 0.3125rem;
+    padding: 0.3125rem;
+    border-radius: var(--border-radius);
+
+    
+
+    width: 100%;
+
+    background-color: var(--secondary-color);
+    cursor: pointer;
+}
+#games-list{
+    border-radius: var(--border-radius);
+    background-color: #0e0e0e !important;
+}
+/*
+    PAGINATION BUTTONS
+*/
+#game-select-page-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+    margin-top: var(--spacing-unit);
+    gap: var(--spacing-unit);
+}
+
+/*
+    CANCEL SELECTION BUTTON
+*/
+#game-select-cancel-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-unit);
+    margin-top: 1.25rem;
+
+    padding: var(--button-padding);
+    border-radius: var(--border-radius);
+    font-size: var(--button-font-size);
+    background-color: var(--primary-color);
+    color: white;
+
+    text-shadow: 0 0.0625rem 0.125rem black;
+    width: 90%;
+    border: 0.125rem solid black;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    box-shadow: 0 0.3125rem 0 rgba(0, 0, 0, 0.6);
+}
+
+#game-select-cancel-button:active {
+    box-shadow: 0 0 0;
+    transform: translateY(0.3125rem);
+}
+
+.move-btn{
+    margin: 0;
+    flex-wrap: wrap;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+}
+.move-btn i{
+    background-color: black;
+    border-radius: var(--border-radius);
+    font-size: var(--icon-font-size);
+    padding: var(--icon-padding);
+    cursor: pointer;
+}
+
+@media (max-width: 48rem) {
+    #game-select-menu {
+        min-width: 90vw;
+        width: 90vw;
+    }
+    
+    .game-listing {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

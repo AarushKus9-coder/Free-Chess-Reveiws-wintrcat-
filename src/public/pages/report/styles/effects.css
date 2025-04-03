@@ -1,0 +1,48 @@
+:root {
+    --snowflake-size: 0.625rem;
+    --petal-size: 10;
+    --animation-distance: 5vw;
+}
+
+#snowflakes-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.snowflake {
+    position: absolute;
+    top: -0.625rem;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+
+.petal {
+    zoom: var(--petal-size);
+    position: absolute;
+    top: -1.25rem;
+    animation: fall linear forwards;
+    z-index: 1;
+}
+
+@keyframes fall {
+    0% { 
+        transform: translate(0vw, 0vh);
+        opacity: 1;
+    }
+    50% { 
+        transform: translate(var(--animation-distance), 50vh);
+        opacity: 0.8;
+    }
+    100% { 
+        transform: translate(calc(-1 * var(--animation-distance)), 100vh);
+        opacity: 0;
+    }
+}

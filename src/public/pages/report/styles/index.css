@@ -1,0 +1,195 @@
+:root {
+    --spacing-unit: 0.625rem;
+    --board-size-sm: min(90vw, 20rem);
+    --board-size-md: min(80vw, 30rem);
+    --board-size-lg: min(70vw, 40rem);
+    --panel-width-sm: 19.6rem;
+    --panel-width-md: 24.1rem;
+    --panel-width-lg: 46.1rem;
+}
+
+body {
+    margin: 0;
+    background-color: rgba(49, 51, 56, 255);
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+#classification-icon {
+    height: 2rem;
+    width: 2rem;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-unit);
+}
+
+.footer a {
+    color: white;
+}
+
+.white {
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1536px) {
+    #board {
+        width: var(--board-size-lg) !important;
+        height: var(--board-size-lg) !important;
+    }
+
+    #board-outer-container {
+        height: calc(var(--board-size-lg) + 5rem) !important;
+    }
+
+    #evaluation-bar {
+        transform: scale(0.7);
+    }
+
+    #review-panel {
+        height: calc(var(--board-size-lg) + 2rem) !important;
+    }
+
+    #classification-message-container {
+        margin-top: 2.5rem !important;
+    }
+
+    #engine-suggestions {
+        flex-direction: row !important;
+        margin-top: 1.125rem !important;
+    }
+
+    #engine-suggestions-title {
+        margin: 0 !important;
+        padding: var(--spacing-unit) !important;
+    }
+}
+
+@media (max-width: 1030px) {
+    #board {
+        width: var(--board-size-md) !important;
+        height: var(--board-size-md) !important;
+    }
+
+    #evaluation-bar {
+        transform: scale(0.73);
+    }
+
+    #review-panel {
+        height: calc(var(--board-size-md) + 2rem) !important;
+    }
+
+    #pgn, #chess-site-username, #fetch-account-games-button {
+        margin-top: 0.3125rem !important;
+    }
+
+    #load-type-dropdown {
+        margin-top: -0.5rem !important;
+    }
+}
+
+@media (max-width: 960px) {
+    #board-outer-container {
+        height: calc(var(--board-size-md) + 3rem) !important;
+    }
+
+    #review-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #board {
+        width: var(--board-size-md) !important;
+        height: var(--board-size-md) !important;
+    }
+
+    #evaluation-bar {
+        transform: scale(0.66);
+    }
+
+    #review-panel {
+        width: var(--panel-width-lg) !important;
+        margin-top: var(--spacing-unit);
+        margin-left: 0 !important;
+    }
+
+    #review-panel-toolbar {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        padding: var(--spacing-unit);
+        border-top: 1px solid #ccc;
+        width: 100%;
+        z-index: 9999;
+    }
+
+    #engine-suggestion {
+        margin-top: 0.3125rem;
+    }
+
+    #classification-message-container {
+        margin-top: 2.5rem;
+    }
+}
+
+@media (max-width: 750px) {
+    #board {
+        width: var(--board-size-sm) !important;
+        height: var(--board-size-sm) !important;
+    }
+
+    #board-outer-container {
+        height: calc(var(--board-size-sm) + 3rem) !important;
+    }
+
+    #evaluation-bar {
+        transform: scale(0.46);
+    }
+
+    #review-panel {
+        width: var(--panel-width-md) !important;
+    }
+
+    #engine-suggestions {
+        margin-top: 2.5rem !important;
+        font-size: 0.9375rem !important;
+    }
+}
+
+@media (max-width: 380px) {
+    #board {
+        width: var(--board-size-sm) !important;
+        height: var(--board-size-sm) !important;
+    }
+
+    #board-outer-container {
+        height: calc(var(--board-size-sm) + 2rem) !important;
+    }
+
+    #evaluation-bar {
+        transform: scale(0.37);
+    }
+
+    #review-panel {
+        width: var(--panel-width-sm) !important;
+    }
+
+    #review-panel-toolbar-buttons i {
+        font-size: 1.375rem !important;
+    }
+
+    .accuracies {
+        font-size: 0.75rem !important;
+    }
+
+    #engine-suggestions {
+        font-size: 0.5625rem !important;
+    }
+}
+
