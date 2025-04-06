@@ -35,6 +35,11 @@ body {
     color: white;
 }
 
+#evaluation-bar {
+    margin-right: 1rem !important;
+    border-radius: 10rem;
+}
+
 /* Responsive Design */
 @media (max-width: 1536px) {
     #board {
